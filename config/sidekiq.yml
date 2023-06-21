@@ -1,0 +1,60 @@
+# Sample configuration file for Sidekiq.
+# Options here can still be overridden by cmd line args.
+# Place this file at config/sidekiq.yml and Sidekiq will
+# pick it up automatically.
+---
+:verbose: false
+:concurrency: 10
+:timeout: 250
+:pidfile: tmp/pid/sidekiq.pid
+
+# Sidekiq will run this file through ERB when reading it so you can
+# even put in dynamic logic, like a host-specific queue.
+# http://www.mikeperham.com/2013/11/13/advanced-sidekiq-host-specific-queues/
+:queues:
+  - critical
+  - default
+  - low
+
+# you can override concurrency based on environment
+production:
+  :concurrency: 25
+staging:
+  :concurrency: 15
+
+:schedule:
+  get_eBay_orders_from_API:
+    cron: '*/15 * * * *' # Runs 30 minutes
+    class: CreateChannelOrderResponseJob
+
+  get_eBay_products_from_API:
+    cron: '0 0 1 * * *' # Runs after every day
+    class: CreateChannelProductResponseJob
+
+  get_Amazon_products_from_API:
+    cron: '0 0 1 * * *' # Runs after every day
+    class: AmazonProductJob
+
+  get_Amazon_orders_from_API:
+    cron: '*/15 * * * *' # Runs 30 minutes
+    class: AmazonOrderJob
+
+  update_amazon_products:
+    cron: '*/30 * * * *' # Runs 30 minutes
+    class: UpdateChannelQuantity
+
+  issue_orders_re_match:
+    cron: '*/30 * * * *' # Runs 30 minutes
+    class: IssueOrdersJob
+
+  amazon_orders_issue:
+    cron: '*/30 * * * *' # Runs 30 minutes
+    class: AmazonOrderItemJob
+
+  get_unpaid_orders_for_amazon_job:
+    cron: '0 0 1 * * *' # Runs after every day
+    class: GetUnpaidOrdersForAmazonJob
+
+  unable_to_find_sku_job:
+    cron: '*/30 * * * *' # Runs 30 minutes
+    class: AmazonUnableToFindSkuJob

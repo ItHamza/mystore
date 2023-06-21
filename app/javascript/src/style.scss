@@ -1,0 +1,215 @@
+/* Variables */
+$body-font-family: 'Nunito',
+  sans-serif;
+$body-bg-color: #eeeef8;
+$template-text-color: #686c71;
+$primary-color: #2962ff;
+$pragraph-color: #686c71;
+$heading-color: #212529;
+$border-color: #f6f6f7;
+$danger-color: #ff3547;
+$danger-color: #ff3547;
+$global-color: #47404f;
+$green-color: #35d26b;
+$gray-color: #a1aab2;
+$purple-color: #7266ba;
+$light-blue-bg: #42a5f6;
+$success-color: #7ed320;
+$danger-color: #f75d81;
+/* End Variables */
+.auth-main-content {
+  height: 100%;
+}
+
+.auth-box {
+  max-width: 500px;
+}
+.auth-main-content {
+  height: 100vh;
+  padding: 0 30px;
+}
+
+.auth-box {
+  max-width: 750px;
+  margin: 30px auto;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.04), 0 1px 6px rgba(0, 0, 0, 0.04);
+  padding-left: 15px;
+  padding-right: 15px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background: $border-color;
+    height: 100%;
+    width: 1px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+  }
+}
+
+.form-left-content {
+  padding: 50px 30px 50px 30px;
+
+  .auth-logo {
+    text-align: center;
+    font-size: 25px;
+    color: $primary-color;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .login-links {
+    a {
+      display: block;
+      margin-top: 15px;
+      line-height: 1;
+      padding: 10px 15px;
+      border-radius: 30px;
+      text-align: center;
+      max-width: 230px;
+      margin-left: auto;
+      margin-right: auto;
+
+      .icon {
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        margin-top: -2px;
+      }
+
+      span {
+        padding-right: 5px;
+      }
+    }
+
+    .fb {
+      background: #3B5998;
+      color: #fff;
+      border: 1px solid #3B5998;
+
+      &:hover {
+        border-radius: 0;
+      }
+    }
+
+    .twi {
+      border: 1px solid #3CF;
+      background: #3CF;
+      color: #fff;
+
+      &:hover {
+        border-radius: 0;
+      }
+    }
+
+    .ema {
+      border: 1px solid #DC4A38;
+      background: #DC4A38;
+      color: #fff;
+
+      &:hover {
+        border-radius: 0;
+      }
+    }
+
+    .linkd {
+      border: 1px solid #007bb6;
+      background: #007bb6;
+      color: #fff;
+
+      &:hover {
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+.form-content {
+  padding: 50px 30px 50px 30px;
+
+  .heading {
+    margin: 0 0 20px;
+    position: relative;
+    font-size: 20px;
+    border-bottom: 1px solid $border-color;
+    padding-bottom: 8px;
+    font-weight: bold;
+
+    &::before {
+      content: '';
+      background: $primary-color;
+      height: 1px;
+      width: 30px;
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+    }
+  }
+
+  .form-control {
+    height: 40px;
+    border-radius: 30px;
+    background-color: #f5f5f5;
+    border: 1px solid #f5f5f5;
+
+    &:focus {
+      border: 1px solid #c8c8f1;
+    }
+  }
+
+  .btn-primary {
+    border-radius: 30px;
+    font-size: 14px;
+    padding: 13px 20px;
+    line-height: 1;
+    width: 100%;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+
+  .fp-link {
+    display: block;
+    margin-top: 15px;
+    max-width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    color: $template-text-color;
+
+    &:hover {
+      color: $primary-color;
+      text-decoration: underline;
+    }
+  }
+}
+
+.auth-bg-image {
+  background-image: url('../../assets/images/home-bg-image.jpg');
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.d-table {
+  width: 100%;
+  height: 100%;
+}
+
+.d-tablecell {
+  display: table-cell;
+  vertical-align: middle;
+}
+.chart-container {
+  width: 400px;
+  height: 300px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.bar {
+  fill: #3498db;
+}

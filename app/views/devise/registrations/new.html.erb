@@ -1,0 +1,71 @@
+<!-- Login Area -->
+<div class="auth-main-content auth-bg-image">
+  <div class="d-table">
+    <div class="d-tablecell">
+      <div class="auth-box">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="form-left-content">
+              <div class="auth-logo">
+                <h3>MyStore<span style="color: #F7941D">.</span></h3>
+              </div>
+
+              <div class="login-links">
+                <a class="fb" href="#">
+                  <i data-feather="facebook" class="icon"></i>
+                  Sign Up with Facebook
+                </a>
+                <a class="twi" href="#">
+                  <i data-feather="twitter" class="icon"></i>
+                  Sign Up with Twitter
+                </a>
+                <a class="ema" href="#">
+                  <i data-feather="mail" class="icon"></i>
+                  Sign Up with Email
+                </a>
+                <a class="linkd" href="#">
+                  <i data-feather="linkedin" class="icon"></i>
+                  Sign Up with Linkedin
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-content">
+              <h1 class="heading">Sign Up</h1>
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= bootstrap_devise_error_messages! %>
+                <div class="form-group">
+                  <%= f.label :email %>
+                  <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                  <%= f.label :password %>
+                  <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
+
+                  <% if @minimum_password_length %>
+                    <small class="form-text text-muted"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
+                  <% end %>
+                </div>
+
+                <div class="form-group">
+                  <%= f.label :password_confirmation %>
+                  <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control' %>
+                </div>
+
+                <%= f.hidden_field :role, value: 2 %>
+                <div class="form-group">
+                  <%= f.submit t('.sign_up'), class: 'btn btn-primary mb-3' %>
+                  <%= render 'devise/shared/links' %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Login Area -->
+

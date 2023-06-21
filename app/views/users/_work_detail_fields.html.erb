@@ -1,0 +1,58 @@
+<br>
+<div class="nested-fields">
+  <div class='row'>
+    <div class='col-lg-6 col-sm-12'>
+      <div class="form-group">
+        <%= f.label :company_name %>
+        <%= f.text_field :company_name, autofocus: true, class: 'form-control', placeholder: 'Enter your first name' %>
+      </div>
+    </div>
+    <div class='col-lg-6 col-sm-12'>
+      <div class="form-group">
+        <%= f.label :position %>
+        <%= f.text_field :position, class: 'form-control', placeholder: 'Enter your last name' %>
+      </div>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='col-lg-6 col-sm-12'>
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_field :description, class: 'form-control' %>
+      </div>
+    </div>
+    <div class='col-lg-6 col-sm-12'>
+      <div class="form-group">
+        <%= f.label :city %>
+        <%= f.text_field :city, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='col-lg-6 col-sm-12'>
+      <div class="form-group">
+        <%= f.label :from %>
+        <%= f.date_field :from, class: 'form-control' %>
+      </div>
+    </div>
+    <div class='col-lg-6 col-sm-12' id = "to_form_field">
+      <div class="form-group">
+        <%= f.label :to %>
+        <%= f.date_field :to, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class='row mb-4 my-2'>
+    <div class='col-lg-6 col-sm-12'>
+      <div class="form-check currently-working-check">
+        <%= f.check_box :currently_working, class: 'form-check-input', onclick: 'currently_working(event)' %>
+        <%= f.label :currently_working, class: 'form-check-label' %>
+      </div>
+    </div>
+  </div>
+
+  <%= link_to_remove_association "Remove Work", f, class: 'btn btn-outline-secondary rounded mb-3' %>
+</div>

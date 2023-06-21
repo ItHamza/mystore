@@ -1,0 +1,11 @@
+<%= f.fields_for :personal_detail do |pd|%>
+  <!-- Work -->
+  <%# Work Detail Fields %>
+  <div id='work_details'>
+    <%= link_to_add_association 'Add Work', pd, :work_details, class: 'nested_fields_btn btn btn-outline-primary rounded float-right'%>
+    <br>
+    <%= pd.fields_for :work_details do |wd| %>
+      <%= render 'work_detail_fields', f: wd %>
+    <% end %>
+  </div>
+<% end %>
