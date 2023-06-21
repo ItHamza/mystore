@@ -204,12 +204,14 @@ $danger-color: #f75d81;
   vertical-align: middle;
 }
 .chart-container {
-  width: 400px;
-  height: 300px;
   border: 1px solid #ccc;
   padding: 10px;
 }
 
 .bar {
   fill: #3498db;
+}
+
+.d-flex{
+  display: flex;
 }

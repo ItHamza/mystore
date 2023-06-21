@@ -121,7 +121,7 @@
 
 <!-- Month Sales Statistics -->
 <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-12">
         <div class="card mb-30">
             <div class="card-body">
                 <div class="card-header">
@@ -130,9 +130,14 @@
 
                 <!-- File path: assets/js/apex-charts/month-sales-statistics.js -->
                 <%# <div id="month-sales-statistics" class="mh-100"></div> %>
-                <div class="chart-container">
-                  <svg id="chart"></svg>
-                </div>
+                    <div class='row'>
+                        <div class="col-6">
+                            <canvas id="dummy-chart"></canvas>
+                        </div>
+                        <div class="col-6" style='height: 400px; text-align: right; justify-content: center; display: flex;'>
+                            <canvas id="dummy-chart-2"></canvas>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
@@ -1003,3 +1008,43 @@
     </div>
 </div>
 </div>
+
+<script>
+  $(document).on('turbolinks:load', function () {
+        var ctx = document.getElementById('dummy-chart').getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+              label: 'Monthly Revenue',
+              data: [50, 40, 30, 70, 80, 33, 89, 69, 90, 70, 20, 100],
+              backgroundColor: ['#29a3a3', '#00cc66', '#ff6600', '#996600', '#ff33cc', '#3366ff', '#66ff33', '#336699', '#999966', '#ff6666', '#99ff33', '#ffff00'],
+              borderColor: 'rgba(75, 192, 192, 1)',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true
+          }
+        });
+
+        var ctx = document.getElementById('dummy-chart-2').getContext('2d');
+        new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+              label: 'Monthly Revenue',
+              data: [50, 40, 30, 70, 80, 33, 89, 69, 90, 70, 20, 100],
+              backgroundColor: ['#29a3a3', '#00cc66', '#ff6600', '#996600', '#ff33cc', '#3366ff', '#66ff33', '#336699', '#999966', '#ff6666', '#99ff33', '#ffff00'],
+              borderColor: 'rgba(75, 192, 192, 1)',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true
+          }
+        });
+   });
+</script>
