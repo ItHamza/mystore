@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get '/home', to: 'home#home'
   get '/products', to: 'home#products'
   get '/dashboard', to: 'home#dashboard'
+  get '/checkout', to: 'home#checkout'
+  get '/cart', to: 'home#cart'
+  get '/contact', to: 'home#contact'
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
